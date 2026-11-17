@@ -1,0 +1,77 @@
+{
+  "train": {
+    "num_pairs": 445,
+    "dimensions": [
+      [
+        1024,
+        1024
+      ]
+    ],
+    "channels_t1": [
+      "RGB"
+    ],
+    "channels_t2": [
+      "RGB"
+    ],
+    "unique_mask_values": [
+      0,
+      156,
+      254,
+      255
+    ],
+    "change_pixel_percentage": 4.589,
+    "missing_b": [],
+    "missing_label": [],
+    "corrupted": []
+  },
+  "val": {
+    "num_pairs": 64,
+    "dimensions": [
+      [
+        1024,
+        1024
+      ]
+    ],
+    "channels_t1": [
+      "RGB"
+    ],
+    "channels_t2": [
+      "RGB"
+    ],
+    "unique_mask_values": [
+      0,
+      156,
+      254,
+      255
+    ],
+    "change_pixel_percentage": 4.1966,
+    "missing_b": [],
+    "missing_label": [],
+    "corrupted": []
+  },
+  "test": {
+    "num_pairs": 128,
+    "dimensions": [
+      [
+        1024,
+        1024
+      ]
+    ],
+    "channels_t1": [
+      "RGB"
+    ],
+    "channels_t2": [
+      "RGB"
+    ],
+    "unique_mask_values": [
+      0,
+      156,
+      254,
+      255
+    ],
+    "change_pixel_percentage": 5.0943,
+    "missing_b": [],
+    "missing_label": [],
+    "corrupted": []
+  }
+}

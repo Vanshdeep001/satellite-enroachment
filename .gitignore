@@ -1,0 +1,57 @@
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+.venv/
+.venv311/
+venv/
+env/
+ENV/
+
+# ── Matplotlib config (local cache, not needed in repo) ───────────────────────
+.mpl_config/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Dataset and large binary files ────────────────────────────────────────────
+# The LEVIR-CD dataset must NOT be committed to git (too large, licensed).
+data/raw/
+data/processed/
+data/train/
+data/val/
+data/test/
+*.zip
+
+# ── Generated outputs (reproducible, so not tracked) ──────────────────────────
+outputs/
+
+# ── Model checkpoints (large binaries) ────────────────────────────────────────
+*.pth
+*.pt
+*.ckpt
+*.bin
+
+# ── macOS system files ────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── IDE / editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Environment files (keep secrets off git) ──────────────────────────────────
+.env
+.env.*
+
