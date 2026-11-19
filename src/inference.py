@@ -119,7 +119,12 @@ class ChangeDetectorInference:
         base_channels = int(metadata.get('base_channels', 16))
 
         # Determine architecture
-        if 'Conc' in arch_class or 'Concatenation' in str(metadata.get('candidate_name', '')):
+        if arch_class == 'SiameseResNetCD':
+            from src.resnet_change import SiameseResNetCD
+            model = SiameseResNetCD(backbone=metadata.get('backbone', 'resnet18'),
+                                    fusion=metadata.get('fusion', 'concat'), pretrained=False)
+            model_name = f"SiameseResNetCD-{metadata.get('backbone', 'resnet18')}-{metadata.get('fusion', 'concat')}"
+        elif 'Conc' in arch_class or 'Concatenation' in str(metadata.get('candidate_name', '')):
             model = SiameseUNetConc(in_channels=3, out_channels=1, base_channels=base_channels, bilinear=True)
             model_name = "SiameseUNetConc"
         elif 'SiameseUNet' in arch_class or 'Diff' in str(metadata.get('candidate_name', '')):

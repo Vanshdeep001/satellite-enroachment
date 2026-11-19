@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "satellite-encroachment-detection"
+version = "0.9.0"
+description = "Satellite land-use change and encroachment detector (Project 50): change detection, instance analysis, restricted-zone advisory alerts, evaluation and robustness tooling."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Academic use; LEVIR-CD data is licensed separately for non-commercial research" }
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "Pillow>=10.0",
+    "torch>=2.2",
+    "torchvision>=0.17",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+gui = ["gradio>=4.0"]
+
+[project.scripts]
+satcd = "src.product.app:main"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

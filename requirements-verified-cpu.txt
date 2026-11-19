@@ -1,0 +1,11 @@
+# Exact versions on which the full test suite and all experiments were verified
+# (Windows 11, Python 3.11.9, CPU only). Install with:
+#   pip install -r requirements-verified-cpu.txt --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+# The original Apple Silicon (MPS) environment used for Phases 0-8 is pinned in requirements.txt.
+numpy==1.26.4
+scipy==1.15.3
+matplotlib==3.10.5
+Pillow==11.3.0
+torch==2.8.0
+torchvision==0.23.0
+pytest==9.1.1
