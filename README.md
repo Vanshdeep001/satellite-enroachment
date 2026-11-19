@@ -32,6 +32,9 @@ The application computes quantitative evaluation metrics (Precision, Recall, F1-
 | **Phase 6** | Blind test set evaluation, comparative benchmarks & area ($\text{m}^2$) | ✅ Complete | `src/evaluate.py`, Test F1: 72.78%, IoU: 57.21% |
 | **Phase 7** | Ablation studies, augmentations, loss re-weighting & 4-optimizer benchmark | ✅ Complete | `docs/phase_7_experiment_report.md`, `src/experiments/` |
 | **Phase 8** | Final model selection (15 epochs), optimisation, inference engine & validation | ✅ Complete | `src/select_final_model.py`, `src/inference.py`, Val F1: 82.94% |
+| **Fundamentals** | From-scratch NumPy tensor sandbox (broadcasting, reshape, Jacobi SVD, gradient checking), McCulloch-Pitts & sigmoid neurons, MLP backprop, GD/Momentum/Nesterov, parameter tracking | ✅ Complete | `src/fundamentals/`, `docs/fundamentals.md`, 45 unit tests |
+| **Step 5 Ablations** | From-scratch GD / SGD / mini-batch / Momentum / Nesterov comparison; init, normalisation (incl. BatchNorm), L2 / dropout / early stopping, augmentation and data-size studies (3 seeds) | ✅ Complete | `src/fundamentals/experiments.py`, `docs/optimization_experiments.md` |
+| **Step 6 Classical learning** | Hebbian, Oja, Sanger GHA; winner-take-all (+ conscience) and Kohonen SOM; perceptron vs LMS delta rule; Hopfield (Hebbian vs projection storage, capacity) and RBM (CD-1/CD-10 vs exact ML) | ✅ Complete | `src/fundamentals/classical_learning.py`, `docs/classical_learning.md` |
 | **Phase 9** | Cadastral boundary encroachment risk overlay, Gradio interactive UI demo & viva defense | 🔲 Next | Interactive web demo, boundary overlays, final code release |
 
 ---
@@ -159,6 +162,21 @@ python src/inference.py \
   --t1 data/val/A/val_1.png \
   --t2 data/val/B/val_1.png \
   --output outputs/inference_sample_val_1.png
+```
+
+To render the neural-network fundamentals explainer figures (tensor sandbox, SVD, gradient checks, neurons, MLP):
+```bash
+python -m src.fundamentals.demo
+```
+
+To reproduce the Step 5 optimiser / initialisation / normalisation / regularisation / augmentation ablations (~9 min on CPU):
+```bash
+python -m src.fundamentals.experiments
+```
+
+To render the Step 6 Hebbian / competitive / error-correction / Hopfield / Boltzmann demonstrations (~70 s):
+```bash
+python -m src.fundamentals.classical_demo
 ```
 
 To reproduce the Phase 8 standardized 15-epoch head-to-head model selection:
